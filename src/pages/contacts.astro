@@ -1,0 +1,26 @@
+---
+import Box from "../components/Box.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contacts" description="Do you want to reach me?">
+  <Box>
+    <h2>Contacts</h2>
+    <p class="mx-32">
+      <span class="text-light/80 dark:text-gray-400">灰色</span>
+      <span>になっている箇所は、所持しているけど教えられないアカウントです</span>
+    </p>
+    <p class="text-light/80 dark:text-gray-400">(VRChatで仲が良い子だけ！)</p>
+    <ul class="flex flex-col gap-1 mt-4">
+      <li>
+        <a href="https://vrchat.com/home/user/usr_e94231c2-b1b5-41a3-a09a-be4496aa99a9" class="underline">VRChat</a>
+      </li>
+      <li>
+        <a href="https://x.com/n2gm_vrc" class="underline">X (Twitter)</a>
+      </li>
+      <li>
+        <p class="text-light/80 dark:text-gray-400">Discord</p>
+      </li>
+    </ul>
+  </Box>
+</Layout>
