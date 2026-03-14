@@ -36,7 +36,9 @@ import ichigo from "../assets/avatar_ichigo.avif";
 <script is:inline>
   const switchAvatar = () => {
     document.documentElement.classList.toggle("dark");
-    sessionStorage.setItem("darkmode", document.documentElement.classList.contains("dark"));
+    const dark = document.documentElement.classList.contains("dark");
+    sessionStorage.setItem("darkmode", dark);
+    document.getElementById("fav").href = dark ? "/fav_ichigo.ico" : "/fav_nemesis.ico";
     return null;
   };
 </script>
