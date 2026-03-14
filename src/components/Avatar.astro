@@ -13,7 +13,7 @@ import ichigo from "../assets/avatar_ichigo.avif";
       height="192"
       alt="avatar"
       format="avif"
-      class="mx-auto rounded-full box-shadow-center shadow-0 dark:shadow-pink-300 hover:shadow-neutral-500/50 transition-all"
+      class="dark:hidden mx-auto rounded-full box-shadow-center shadow-0 dark:shadow-pink-300 hover:shadow-neutral-500/50 transition-all"
     />
     <Image
       id="avatar_ichigo"
@@ -22,7 +22,7 @@ import ichigo from "../assets/avatar_ichigo.avif";
       height="192"
       alt="avatar"
       format="avif"
-      class="hidden mx-auto rounded-full box-shadow-center shadow-0 dark:shadow-pink-300 hover:shadow-neutral-500/50 transition-all"
+      class="hidden dark:block mx-auto rounded-full box-shadow-center shadow-0 dark:shadow-pink-300 hover:shadow-neutral-500/50 transition-all"
     />
   </div>
   <div>
@@ -33,9 +33,8 @@ import ichigo from "../assets/avatar_ichigo.avif";
 
 <script is:inline>
   const switchAvatar = () => {
-    document.getElementById("avatar_nemesis").classList.toggle("hidden");
-    document.getElementById("avatar_ichigo").classList.toggle("hidden");
     document.documentElement.classList.toggle("dark");
+    sessionStorage.setItem("darkmode", document.documentElement.classList.contains("dark"));
     return null;
   };
 </script>
