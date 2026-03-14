@@ -1,0 +1,41 @@
+---
+import Image from "astro/components/Image.astro";
+import nemesis from "../assets/avatar_nemesis.avif";
+import ichigo from "../assets/avatar_ichigo.avif";
+---
+
+<div class="flex flex-col items-center justify-around gap-y-4">
+  <div class="transition-transform active:scale-95" onclick="switchAvatar()">
+    <Image
+      id="avatar_nemesis"
+      src={nemesis}
+      width="192"
+      height="192"
+      alt="avatar"
+      format="avif"
+      class="mx-auto rounded-full box-shadow-center shadow-0 dark:shadow-pink-300 hover:shadow-neutral-500/50 transition-all"
+    />
+    <Image
+      id="avatar_ichigo"
+      src={ichigo}
+      width="192"
+      height="192"
+      alt="avatar"
+      format="avif"
+      class="hidden mx-auto rounded-full box-shadow-center shadow-0 dark:shadow-pink-300 hover:shadow-neutral-500/50 transition-all"
+    />
+  </div>
+  <div>
+    <h2 class="dark:hidden">水色ネメシスちゃん、参上！ 💫</h2>
+    <h2 class="hidden dark:block font-mono">Do you love me...?</h2>
+  </div>
+</div>
+
+<script is:inline>
+  const switchAvatar = () => {
+    document.getElementById("avatar_nemesis").classList.toggle("hidden");
+    document.getElementById("avatar_ichigo").classList.toggle("hidden");
+    document.documentElement.classList.toggle("dark");
+    return null;
+  };
+</script>

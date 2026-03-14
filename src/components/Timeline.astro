@@ -1,0 +1,54 @@
+---
+export type history = {
+  title: string;
+  description: string;
+  at: Date;
+};
+
+interface Props {
+  history: history[];
+}
+
+const { history } = Astro.props;
+---
+
+<div class="w-max mx-auto my-4">
+  <div class="flex w-full flex-col items-start text-start">
+    {
+      history.map((event) => {
+        return (
+          <div class="group flex gap-x-6">
+            <div class="relative">
+              <>
+                <div class="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-slate-200 dark:bg-pink-200" />
+                <span class="relative z-10 grid h-3 w-3 place-items-center rounded-full bg-slate-200 dark:bg-pink-200 text-slate-800" />
+              </>
+            </div>
+            <div class="-translate-y-1.5 pb-8 text-slate-600">
+              <>
+                <p class="text-base antialiased">
+                  <span class="text-light font-bold">{event.title}</span>
+                  <span class="text-light/80">{`(${event.at.toLocaleDateString()})`}</span>
+                </p>
+                <small class="mt-2 text-sm text-slate-600 dark:text-1 antialiased">{event.description}</small>
+              </>
+            </div>
+          </div>
+        );
+      })
+    }
+
+    <div class="group flex gap-x-6">
+      <div class="relative">
+        <span
+          class="relative z-10 grid h-3 w-3 place-items-center rounded-full bg-slate-200 dark:bg-pink-200 text-slate-800"
+        ></span>
+      </div>
+      <div class="-translate-y-1.5 text-slate-600">
+        <p class="text-base font-bold text-light antialiased">今</p><small
+          class="mt-2 text-sm text-slate-600 dark:text-1 antialiased">どっかでなんかしてる</small
+        >
+      </div>
+    </div>
+  </div>
+</div>
